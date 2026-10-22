@@ -1,0 +1,46 @@
+# 《纸上一线》配乐用到的全部采样，相对采样根（$AGENTREEL_SAMPLES，默认 music/sampler/samples/）。
+# 只取这些：music/sampler/.venv/bin/python music/sampler/fetch_samples.py --files films/demo-paper/score/samples.txt
+# 全部是 CC0：VCSL（Steinway B、民谣竖琴、手铃）、VSCO 2 CE（弦乐）、Freesound（铅笔、速写本）。
+# 改了乐谱以后重新生成（要先有完整的采样）：
+#   AGENTREEL_SAMPLES_LOG=<临时文件> music/sampler/.venv/bin/python films/demo-paper/score/score.py --no-stems
+#   然后把 <临时文件> 排序后替换下面的清单。
+found/pencil_writing_rivernile7.ogg
+found/scribble_long_waldram.ogg
+found/sketchbook_flips_owlstorm.ogg
+vcsl/Folk Harp/EWHarp_Normal_A#3_v3_RR1.flac
+vcsl/Folk Harp/EWHarp_Normal_C3_v3_RR1.flac
+vcsl/Folk Harp/EWHarp_Normal_D2_v2_RR1.flac
+vcsl/Folk Harp/EWHarp_Normal_D3_v3_RR1.flac
+vcsl/Folk Harp/EWHarp_Normal_D4_v3_RR1.flac
+vcsl/Folk Harp/EWHarp_Normal_F#2_v3_RR1.flac
+vcsl/Folk Harp/EWHarp_Normal_F#3_v3_RR1.flac
+vcsl/Folk Harp/EWHarp_Normal_G#3_v2_RR1.flac
+vcsl/Folk Harp/EWHarp_Normal_G#4_v3_RR1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_A#1_vl2_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_A#1_vl3_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_A#3_vl2_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_A#4_vl3_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_C5_vl3_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_D2_vl4_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_D3_vl4_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_D5_vl2_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_E4_vl2_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_E5_vl2_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_F#2_vl3_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_F#2_vl4_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_F#4_vl2_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_F#5_vl2_rr1.flac
+vcsl/Grand Piano/JHPiano_Sus_Close_G#4_vl4_rr1.flac
+vcsl/Hand Chimes/sus_F#4_r01_main.wav
+vsco2/cb/sus/BKCtbss_SusVib_D1_v1_rr1.flac
+vsco2/cb/sus/BKCtbss_SusVib_D1_v3_rr1.flac
+vsco2/va/sus/ViolaEns_susvib_G2_v1_1.flac
+vsco2/va/sus/ViolaEns_susvib_G2_v2_1.flac
+vsco2/vc/sus/susvib_G1_v1_1.flac
+vsco2/vc/sus/susvib_G1_v3_1.flac
+vsco2/vn/sus/VlnEns_susVib_A3_v1.flac
+vsco2/vn/sus/VlnEns_susVib_A3_v2.flac
+vsco2/vn/sus/VlnEns_susVib_D3_v1.flac
+vsco2/vn/sus/VlnEns_susVib_D3_v2.flac
+vsco2/vn/sus/VlnEns_susVib_G4_v1.flac
+vsco2/vn/sus/VlnEns_susVib_G4_v2.flac

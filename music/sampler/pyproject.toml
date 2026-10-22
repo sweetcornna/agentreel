@@ -1,0 +1,30 @@
+[build-system]
+requires = ["setuptools>=69,<81"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "agentreel-sampler"
+version = "0.1.0"
+description = "代码写配乐用的采样乐器（CC0 / PD / CC-BY 录音，另行下载）+ 经典 DSP、混音、母带与自检。"
+readme = "README.md"
+requires-python = ">=3.12,<3.13"
+license = { text = "MIT" }
+authors = [{ name = "agentreel contributors" }]
+# 确切版本见 requirements.lock（先装它，见 README.md）
+dependencies = [
+    "numpy>=2.1",
+    "scipy>=1.14",
+    "soundfile>=0.12",
+    "pyloudnorm>=0.1.1",
+    "pyworld>=0.3.4",
+    "setuptools<81",          # pyworld 0.3.x 导入时要 pkg_resources
+]
+
+[project.optional-dependencies]
+plots = ["matplotlib>=3.8"]
+
+[tool.setuptools]
+packages = ["sampler", "sampler.prepare"]
+
+[tool.setuptools.package-data]
+sampler = ["data/*.json"]

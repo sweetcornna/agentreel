@@ -1,0 +1,21 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "filmsynth"
+version = "0.2.0"
+description = "Code-only instruments and DSP for film scores: no samples, deterministic, sample-for-sample reproducible"
+readme = "README.md"
+license = "MIT"
+authors = [{ name = "agentreel contributors" }]
+requires-python = ">=3.12"
+# Exact versions (the ones the sample-for-sample claims were measured with) are in requirements.lock.txt.
+dependencies = ["numpy>=2.0", "scipy>=1.11", "numba>=0.60", "soundfile>=0.12", "pyloudnorm>=0.1.1", "matplotlib>=3.8"]
+
+[project.scripts]
+filmsynth-check = "filmsynth.check:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["filmsynth*"]

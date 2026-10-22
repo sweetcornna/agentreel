@@ -1,0 +1,25 @@
+# 开发与验证本库时用的确切版本（Python 3.12，macOS arm64）。在仓库根目录：
+#   uv venv --python 3.12 music/sampler/.venv
+#   uv pip install --python music/sampler/.venv -r music/sampler/requirements.lock
+#   uv pip install --python music/sampler/.venv --no-deps -e music/sampler
+# pyworld 0.3.5 不是每个平台都有现成的 wheel，没有时从源码编译（要 C++ 编译器）。
+# matplotlib 及其以下几项只给 selfcheck.py 画图用（pyproject 里的 [plots]）。
+numpy==2.5.3
+scipy==1.18.1
+soundfile==0.14.0
+cffi==2.1.1
+pycparser==3.0
+pyloudnorm==0.2.0
+pyworld==0.3.5
+setuptools==80.10.2
+typing-extensions==4.16.0
+matplotlib==3.11.2
+contourpy==1.4.0
+cycler==0.12.1
+fonttools==4.66.0
+kiwisolver==1.5.1
+packaging==26.3
+pillow==12.3.0
+pyparsing==3.3.3
+python-dateutil==2.9.0.post0
+six==1.17.0

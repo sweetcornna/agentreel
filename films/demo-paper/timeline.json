@@ -1,0 +1,45 @@
+{
+  "version": 1,
+  "title": { "zh": "纸上一线", "en": "ONE LINE ON PAPER" },
+  "scope": "paper2d + sampler 的示例片：6 小节画面 + 1 小节音乐尾巴（7.1–8.1 画面停在纸色，totalFrames 含尾巴）。演示 React 场景按帧号出画、纸面质感、铅笔框成纸、红线穿引、逐字出现的字幕、按拍点的音效提示。",
+  "notation": "位置写成 \"小节.拍\"（从 1 起），\"小节.拍+0.5\" 表示晚半拍，\"小节.拍+4f\" 表示晚 4 帧。镜头的 from 含、to 不含。frame = ((bar-1)*beatsPerBar + (beat-1)) * framesPerBeat。",
+  "fps": 30,
+  "bpm": 72,
+  "beatsPerBar": 4,
+  "framesPerBeat": 25,
+  "framesPerBar": 100,
+  "bars": 7,
+  "totalFrames": 700,
+  "filmEnd": "7.1",
+  "canvas": { "preview": [1920, 1080], "final": [1920, 1080] },
+  "sections": [
+    { "id": "paper", "zh": "成纸", "from": "1.1", "to": "3.1" },
+    { "id": "line", "zh": "一线", "from": "3.1", "to": "5.1" },
+    { "id": "end", "zh": "片尾", "from": "5.1", "to": "7.1" },
+    { "id": "tail", "zh": "余音", "from": "7.1", "to": "8.1" }
+  ],
+  "shots": [
+    {
+      "id": "P01", "zh": "成纸", "from": "1.1", "to": "3.1",
+      "content": "纯纸色底，纸纹与纤维随帧号确定地生成。1.3 起铅笔线框一笔一笔画出一张卡片，2.3 卡片「成纸」（铅笔线淡去，纸面带轻微投影）。"
+    },
+    {
+      "id": "P02", "zh": "一线", "from": "3.1", "to": "5.1",
+      "content": "3.1 一根红线从画面左边进来，绕卡片一圈后在卡片下沿拉直成下划线；同时卡片上逐字出现字幕「每一帧只由帧号决定。」，红线停在「帧号」下面（4.1）。4.3 起第二句「声音和画面对着同一张拍子表。」逐字出现，红线滑到「拍子表」下。"
+    },
+    {
+      "id": "P03", "zh": "片尾", "from": "5.1", "to": "7.1",
+      "content": "5.1 卡片收起，红线绷直成一条横线，上方淡入「agentreel」与仓库地址 github.com/sweetcornna/agentreel；6.4 起淡出，7.1 切到纸色。"
+    }
+  ],
+  "cues": [
+    { "id": "pencil", "at": "1.3-2.3", "kind": "sfx", "note": "铅笔沙沙声，每一笔一次" },
+    { "id": "paper", "at": "2.3", "kind": "hit", "note": "成纸：一声轻的纸面翻落 + 柔和钢琴和弦" },
+    { "id": "line", "at": "3.1", "kind": "hit", "note": "红线进场：拨弦 / 竖琴上行" },
+    { "id": "word1", "at": "4.1", "kind": "accent", "note": "红线停在「帧号」：轻钟" },
+    { "id": "word2", "at": "4.3-5.1", "kind": "phrase", "note": "第二句逐字出现时的短乐句" },
+    { "id": "end", "at": "5.1", "kind": "hit", "note": "线绷直：持续的宽和弦" },
+    { "id": "cut", "at": "7.1", "kind": "cut", "note": "音乐在 7.1 收住，余音到 8.1" }
+  ],
+  "loudness": { "integratedLUFS": -16, "truePeakDbtp": -1 }
+}

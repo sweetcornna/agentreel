@@ -1,0 +1,14 @@
+node_modules/
+dist/
+out/
+.venv/
+.venv-*/
+__pycache__/
+*.pyc
+*.egg-info/
+.DS_Store
+.env
+.env.*
+*.log
+render-tmp/
+samples/

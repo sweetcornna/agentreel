@@ -1,0 +1,27 @@
+{
+  // 片目录的 tsconfig.json 写 {"extends": "<到这里的相对路径>/tsconfig.film.json", "include": ["src"]}。片不装依赖：
+  // 类型从这个引擎的 node_modules 来，'remotion' / 'paper2d' / 'paper2d/components' 指到引擎（打包时 lib/build.ts 做同样的映射）。
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "lib": ["DOM", "DOM.Iterable", "ES2022"],
+    "types": [],
+    "paths": {
+      "remotion": ["./shim/remotion.ts"],
+      "paper2d": ["./shim/remotion.ts"],
+      "paper2d/components": ["./components/index.ts"],
+      "react": ["./node_modules/@types/react"],
+      "react/*": ["./node_modules/@types/react/*"],
+      "react-dom": ["./node_modules/@types/react-dom"],
+      "react-dom/*": ["./node_modules/@types/react-dom/*"]
+    }
+  }
+}

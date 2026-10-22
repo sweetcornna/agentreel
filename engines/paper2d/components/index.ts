@@ -1,0 +1,21 @@
+// 'paper2d/components'：纸面场景的通用画法。片里 import {HandPaper, Kinetic, beatGrid, ...} from 'paper2d/components'。
+export {clamp, ease, fadeWindow, lerp, onTwos, pulse, ramp, rnd, wobble} from './anim';
+export {alive} from './alive';
+export type {AliveOpts, Pluck} from './alive';
+export {loadFonts} from './fonts';
+export type {FontFaceSpec} from './fonts';
+export {Grain, Vignette} from './grain';
+export {HandArrow, HandCircle, HandSlash, HandTick, HandUnderline, Stroke, centerline, fbm1, hash, intersect, noise1, pacePos, polyLength, resample, roughen, useBoil} from './hand';
+export type {MarkProps, Pace, Pt, StrokeProps, Texture} from './hand';
+export {clampLens, lensPath, lensTransform, toScreenLens} from './lens';
+export type {Lens, LensKey, Screen} from './lens';
+export {fonts, palette} from './palette';
+export type {Palette} from './palette';
+export {HandPaper, PaperCard, Plate, SHADOW, SHADOW_S, shadow} from './paper';
+export type {Ruling} from './paper';
+export {OnTwos, Retimed} from './retimed';
+export {Caption, Kinetic, Mono, Typed, kineticLayout} from './text';
+export type {KineticLayout, KineticProps} from './text';
+export {Burst, Threaded, blendPaths, outline, pathLength, resampleN, sag, slice} from './thread';
+export {beatGrid, parsePos} from './timeline';
+export type {BeatGrid, Cue, Pos, Span, Timeline} from './timeline';

@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>beat3d viewer</title>
+<style>
+  :root { color-scheme: dark; }
+  body { margin: 0; background: #0b0b0c; color: #c9c6bf; font: 13px/1.4 ui-monospace, Menlo, monospace; }
+  #stage { width: min(100vw, calc((100vh - 96px) * 16 / 9)); margin: 0 auto; background: #000; }
+  #bar { display: flex; gap: 10px; align-items: center; padding: 10px 16px; flex-wrap: wrap; }
+  #slider { flex: 1; min-width: 240px; }
+  button, select { background: #1b1b1d; color: #ddd; border: 1px solid #333; border-radius: 4px; padding: 3px 9px; font: inherit; }
+  #pos { min-width: 260px; }
+  #err { color: #f88; padding: 0 16px; white-space: pre-wrap; }
+</style>
+</head>
+<body>
+<div id="stage"></div>
+<div id="bar">
+  <button id="prevBeat" title="previous beat (shift+←)">⇤ beat</button>
+  <button id="prev" title="previous frame (←)">◀</button>
+  <button id="play" title="play (space)">play</button>
+  <button id="next" title="next frame (→)">▶</button>
+  <button id="nextBeat" title="next beat (shift+→)">beat ⇥</button>
+  <input id="slider" type="range" min="0" value="0" step="1">
+  <span id="pos"></span>
+  <select id="size"><option value="960x540">540p</option><option value="1920x1080" selected>1080p</option><option value="3840x2160">2160p</option></select>
+  <label><input id="skel" type="checkbox"> skeleton</label>
+  <label><input id="lab" type="checkbox"> lab</label>
+  <input id="goto" placeholder="5.1, 5.1+3f or f256" size="12">
+</div>
+<div id="err"></div>
+<script src="film.js"></script>
+<script>
+const $ = (id) => document.getElementById(id);
+const q = new URLSearchParams(location.search);
+let frame = Number(q.get('f') ?? 0), busy = false, want = null, playing = false;
+async function init() {
+  const [w, h] = $('size').value.split('x').map(Number);
+  $('stage').innerHTML = '';
+  const info = await film.init({ width: w, height: h, skeleton: $('skel').checked, lab: $('lab').checked, mount: $('stage') });
+  $('slider').max = String(info.totalFrames - 1);
+  show(frame);
+}
+async function show(n) {
+  frame = Math.max(0, Math.min(film.totalFrames - 1, n));
+  $('slider').value = String(frame);
+  if (busy) { want = frame; return; }
+  busy = true;
+  try {
+    const st = await film.renderFrame(frame);
+    const shot = film.shots.find((s) => frame >= s.fromFrame && frame < s.toFrame);
+    $('pos').textContent = `f${frame}  ${film.label(frame)}  ${shot ? shot.id + ' ' + shot.zh : 'black'}  ${st.renderMs.toFixed(1)} ms`;
+    history.replaceState(null, '', `?f=${frame}`);
+    $('err').textContent = '';
+  } catch (e) { $('err').textContent = String(e.stack || e); }
+  busy = false;
+  if (want !== null) { const w = want; want = null; show(w); }
+  else if (playing) requestAnimationFrame(() => show(frame + 1));
+}
+$('slider').oninput = (e) => show(Number(e.target.value));
+$('prev').onclick = () => show(frame - 1);
+$('next').onclick = () => show(frame + 1);
+const BEAT = film.framesPerBeat;
+$('prevBeat').onclick = () => show(frame - BEAT);
+$('nextBeat').onclick = () => show(frame + BEAT);
+$('play').onclick = () => { playing = !playing; $('play').textContent = playing ? 'pause' : 'play'; if (playing) show(frame + 1); };
+$('size').onchange = init;
+$('skel').onchange = init;
+$('lab').onchange = init;
+$('goto').onkeydown = (e) => { if (e.key !== 'Enter') return; const v = e.target.value.trim(); show(v.startsWith('f') ? Number(v.slice(1)) : film.frameAt(v)); };
+addEventListener('keydown', (e) => {
+  if (e.target.tagName === 'INPUT' && e.target.type !== 'range') return;
+  if (e.key === 'ArrowLeft') show(frame - (e.shiftKey ? BEAT : 1));
+  if (e.key === 'ArrowRight') show(frame + (e.shiftKey ? BEAT : 1));
+  if (e.key === ' ') { e.preventDefault(); $('play').click(); }
+});
+init().catch((e) => ($('err').textContent = String(e.stack || e)));
+</script>
+</body>
+</html>

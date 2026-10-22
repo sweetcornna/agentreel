@@ -1,0 +1,4 @@
+{
+  "extends": "../../engines/paper2d/tsconfig.film.json",
+  "include": ["src"]
+}

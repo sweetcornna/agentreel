@@ -1,0 +1,25 @@
+{
+  "name": "beat3d",
+  "private": true,
+  "type": "module",
+  "description": "Bun + three.js film renderer: one frame is a pure function of its frame number; headless Chrome renders, ffmpeg encodes.",
+  "license": "MIT",
+  "scripts": {
+    "build": "bun scripts/build.ts",
+    "serve": "bun scripts/serve.ts",
+    "still": "bun scripts/still.ts",
+    "render": "bun scripts/render.ts",
+    "skeleton": "bun scripts/render.ts --size 540 --skeleton --no-audio --out-name skeleton-540p.mp4",
+    "check:determinism": "bun scripts/check-determinism.ts",
+    "qa:cuts": "bun scripts/qa-cuts.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "three": "0.186.1"
+  },
+  "devDependencies": {
+    "@types/bun": "1.3.13",
+    "@types/three": "0.186.0",
+    "typescript": "5.9.3"
+  }
+}

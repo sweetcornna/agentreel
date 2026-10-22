@@ -1,0 +1,229 @@
+{
+ "note": "Reference statistics of each COMPLETE VCSL set at commit c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e, measured by sampler.prepare.vcsl.measure_ref on full downloads: per dynamic layer the median level_db of index_folk.json, the median of the loudest layer, and for the percussion sets the median peak of the loudest layer per hit kind. sampler.folk levels a partial download with these, so a score that fetched only the files it plays renders exactly as with the whole set.",
+ "commit": "c1ea7bcc3c7309650ab0da9d15c9cd1fbc4a4c7e",
+ "sets": {
+  "balafon": {
+   "files": 18,
+   "layer_median_db": {
+    "1": -55.345,
+    "2": -44.695,
+    "3": -38.144999999999996
+   },
+   "top_median_db": -38.144999999999996
+  },
+  "bongos": {
+   "files": 28,
+   "layer_median_db": {
+    "1": -51.81,
+    "2": -37.175,
+    "3": -29.855
+   },
+   "top_median_db": -29.855,
+   "kind_peak": {
+    "BongoH_Hit1": 0.29204532504081726,
+    "BongoH_HitMuted1": 0.32548683881759644,
+    "BongoH_Roll": 0.31570965051651,
+    "BongoL_Hit1": 0.35013052821159363,
+    "BongoL_HitMuted2": 0.3924741595983505,
+    "BongoL_Roll": 0.3291066586971283
+   }
+  },
+  "cabasa": {
+   "files": 6,
+   "layer_median_db": {
+    "1": -50.480000000000004,
+    "2": -41.379999999999995
+   },
+   "top_median_db": -41.379999999999995,
+   "kind_peak": {
+    "Cabasa1_Hit": 0.10972544550895691,
+    "Cabasa1_Rub": 0.10024741291999817
+   }
+  },
+  "cajon": {
+   "files": 18,
+   "layer_median_db": {
+    "2": -36.99,
+    "3": -29.08,
+    "4": -25.205,
+    "6": -19.52,
+    "8": -22.07
+   },
+   "top_median_db": -22.07,
+   "kind_peak": {
+    "Cajon_hit1": 0.8569347262382507,
+    "Cajon_hit2": 0.732519268989563,
+    "Cajon_hit3": 0.8992942571640015
+   }
+  },
+  "claps": {
+   "files": 10,
+   "layer_median_db": {
+    "1": -24.81,
+    "2": -36.6,
+    "3": -33.23,
+    "4": -29.41
+   },
+   "top_median_db": -29.41,
+   "kind_peak": {
+    "Clap": 0.9522857666015625,
+    "SoloClap": 0.910577118396759
+   }
+  },
+  "conga": {
+   "files": 34,
+   "layer_median_db": {
+    "1": -45.535,
+    "2": -35.864999999999995,
+    "3": -33.505,
+    "4": -32.849999999999994
+   },
+   "top_median_db": -32.849999999999994,
+   "kind_peak": {
+    "Conga_HitFM": 0.23220084607601166,
+    "Conga_HitN": 0.1493488773703575,
+    "Quinto_HitFM1": 0.11408136785030365,
+    "Quinto_HitN": 0.22056551277637482,
+    "Tumba_HitFM": 0.17942612618207932,
+    "Tumba_HitN": 0.12249922379851341
+   }
+  },
+  "dan_tranh": {
+   "files": 48,
+   "layer_median_db": {
+    "5": -39.655,
+    "6": -31.4,
+    "7": -25.615000000000002
+   },
+   "top_median_db": -25.615000000000002
+  },
+  "dan_tranh_gliss": {
+   "files": 12,
+   "layer_median_db": {
+    "5": -42.599999999999994,
+    "7": -32.835
+   },
+   "top_median_db": -32.835,
+   "kind_peak": {
+    "Gliss_Dwn_Med": 0.3550293743610382,
+    "Gliss_Dwn_Slw": 0.35386717319488525,
+    "Gliss_Dwn_Swl": 0.35596802830696106,
+    "Gliss_Up_Med": 0.35458892583847046,
+    "Gliss_Up_Slw": 0.3517196774482727,
+    "Gliss_Up_Swl": 0.35177186131477356
+   }
+  },
+  "folk_harp": {
+   "files": 58,
+   "layer_median_db": {
+    "2": -40.68,
+    "3": -27.68
+   },
+   "top_median_db": -27.68
+  },
+  "frame_drum": {
+   "files": 18,
+   "layer_median_db": {
+    "1": -78.11,
+    "2": -48.655,
+    "3": -35.39
+   },
+   "top_median_db": -35.39,
+   "kind_peak": {
+    "HDrumL_Hand": 0.0015925936168059707,
+    "HDrumL_Hit": 0.2580532431602478,
+    "HDrumL_HitMuted": 0.32097989320755005,
+    "HDrumS_Hand": 0.0009427402401342988,
+    "HDrumS_Hit": 0.12300856411457062,
+    "HDrumS_HitMuted": 0.11864690855145454
+   }
+  },
+  "grand_piano": {
+   "files": 126,
+   "layer_median_db": {
+    "2": -17.96,
+    "3": -17.46,
+    "4": -17.54
+   },
+   "top_median_db": -17.54
+  },
+  "hihat": {
+   "files": 15,
+   "layer_median_db": {
+    "1": -35.73,
+    "2": -50.21,
+    "3": -39.365,
+    "4": -30.81
+   },
+   "top_median_db": -30.81,
+   "kind_peak": {
+    "HiHat_Close": 0.08791401982307434,
+    "HiHat_HitC": 0.3105710446834564,
+    "HiHat_HitLoose": 0.40003007650375366,
+    "HiHat_HitO": 0.3226221948862076,
+    "HiHat_HitOC": 0.14980076253414154
+   }
+  },
+  "marimba": {
+   "files": 30,
+   "layer_median_db": {
+    "3": -59.39,
+    "5": -47.665,
+    "7": -36.675
+   },
+   "top_median_db": -36.675
+  },
+  "shaker_large": {
+   "files": 6,
+   "layer_median_db": {
+    "1": -43.129999999999995
+   },
+   "top_median_db": -43.129999999999995,
+   "kind_peak": {
+    "LShaker_Hit": 0.25029952079057693,
+    "LShaker_Shake1D": 0.07516883686184883,
+    "LShaker_Shake1U": 0.04453401640057564
+   }
+  },
+  "shaker_small": {
+   "files": 16,
+   "layer_median_db": {
+    "1": -49.245000000000005
+   },
+   "top_median_db": -49.245000000000005,
+   "kind_peak": {
+    "ShakerDouble_Down": 0.0441752914339304,
+    "ShakerDouble_Up": 0.014138140249997377,
+    "ShakerHighFaster_Down": 0.03515737131237984,
+    "ShakerHighFaster_Up": 0.07016171142458916,
+    "ShakerLowFaster_Down": 0.039998844265937805,
+    "ShakerLowFaster_Up": 0.06093321181833744,
+    "Shaker_Roll_Fast": 0.09043656662106514,
+    "Shaker_Slap": 0.047674695029854774
+   }
+  },
+  "strumstick": {
+   "files": 57,
+   "layer_median_db": {
+    "1": -43.23,
+    "2": -31.53,
+    "3": -26.75
+   },
+   "top_median_db": -26.75
+  },
+  "tambourine": {
+   "files": 7,
+   "layer_median_db": {
+    "1": -47.114999999999995,
+    "2": -42.36,
+    "3": -39.9
+   },
+   "top_median_db": -39.9,
+   "kind_peak": {
+    "Tamb1_Hit": 0.1565077006816864,
+    "Tamb1_Roll": 0.12142153084278107,
+    "Tamb1_Shake": 0.055703673511743546
+   }
+  }
+ }
+}
